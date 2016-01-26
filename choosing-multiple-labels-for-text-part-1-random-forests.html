@@ -28,12 +28,12 @@
         <div id="wrapper">
 <header id="sidebar" class="side-shadow">
     <hgroup id="site-header">
-        <a id="site-title" href="."><h1><i class="icon-coffee"></i> Aleksandr Sinayev</h1></a>
+        <a id="site-title" href="."><h1><i class="icon-bar-chart"></i> Aleksandr Sinayev</h1></a>
         <p id="site-desc"></p>
     </hgroup>
     <nav>
         <ul id="nav-links">
-                <li><a href="./blog">Blog</a></li>
+                <li><a href="./">Blog</a></li>
                 <li><a href="./contact">Contact</a></li>
                 <li><a href="./pages/projects">Projects</a></li>
                 <li><a href="./about-me">About</a></li>
@@ -146,17 +146,17 @@
 </pre></div>
 
 
-<p>I think this is a good label, and in general, I found all the labels the algorithm assigned were appropriate, though even in the training set they did not always agree wiht the labels originally provided. However, problematically, the labels were only available for about a quarter of the test cases. 
-```</p>
-<blockquote>
-<p>mean(unlist(lapply(chosennames[!train], function(x)length(x)==0))) #proportion of test articles that weren't labeled
-[1] 0.7282051
-ifps$q_text[4]
-[1] "Will the United Nations General Assembly recognize a Palestinian state by 30 September 2011?"
-chosennames[4]
-$<code>4</code>
-character(0)```</p>
-</blockquote>
+<p>I think this is a good label, and in general, I found all the labels the algorithm assigned were appropriate, though even in the training set they did not always agree wiht the labels originally provided. However, problematically, the labels were only available for about a quarter of the test cases. </p>
+<div class="highlight"><pre><span class="o">&gt;</span> <span class="nx">mean</span><span class="p">(</span><span class="nx">unlist</span><span class="p">(</span><span class="nx">lapply</span><span class="p">(</span><span class="nx">chosennames</span><span class="cp">[</span><span class="o">!</span><span class="nx">train</span><span class="cp">]</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">x</span><span class="p">)</span><span class="nx">length</span><span class="p">(</span><span class="nx">x</span><span class="p">)</span><span class="o">==</span><span class="mi">0</span><span class="p">)))</span> <span class="err">#</span><span class="nx">proportion</span> <span class="nx">of</span> <span class="nx">test</span> <span class="nx">articles</span> <span class="nx">that</span> <span class="nx">weren</span><span class="err">&#39;</span><span class="nx">t</span> <span class="nx">labeled</span>
+<span class="cp">[</span><span class="mi">1</span><span class="cp">]</span> <span class="mf">0.7282051</span>
+<span class="o">&gt;</span> <span class="nx">ifps$q_text</span><span class="cp">[</span><span class="mi">4</span><span class="cp">]</span>
+<span class="cp">[</span><span class="mi">1</span><span class="cp">]</span> <span class="s2">&quot;Will the United Nations General Assembly recognize a Palestinian state by 30 September 2011?&quot;</span>
+<span class="o">&gt;</span> <span class="nx">chosennames</span><span class="cp">[</span><span class="mi">4</span><span class="cp">]</span>
+<span class="nx">$</span><span class="err">`</span><span class="mi">4</span><span class="err">`</span>
+<span class="nx">character</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+
+
 <p>Question 4 for example, was unlabeled, though a topic like "Israel" might be appropriate. That's because the word "Palestine" did not appear in any of the labeled questions. Without that word, it's hard to tell what the question is about.</p>
 <h1>Conclusion</h1>
 <p>The random forests did a good job learning what they could from the data. Moreover, the models could be fit with only a few lines of code and were effective without modifying too many options. But it appears that there just weren't enough labeled data available here to label the questions appropriately. In Part 2 of this blog post, I consult an unsupervised machine learning approach to label these questions.</p>
